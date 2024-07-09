@@ -1,3 +1,4 @@
+
 import hashlib
 import logging
 import json
@@ -63,7 +64,7 @@ class ThemeManager:
         """
         config = {}
         try:
-            with pkg_resources.resource_stream('huefy', '../hue.config') as config_file:
+            with pkg_resources.resource_stream('huefy', 'hue.config') as config_file:
                 config = json.load(config_file)
         except IOError as e:
             print(f"Error reading config file: {e}")
@@ -80,9 +81,9 @@ class ThemeManager:
         bool: True if the theme is valid, False otherwise.
         """
         if not theme_file:
-            theme_file = pkg_resources.resource_filename('huefy', f'../themes.d/{self.default_theme}')
+            theme_file = pkg_resources.resource_filename('huefy', f'themes.d/{self.default_theme}')
 
-        manifest_path = pkg_resources.resource_filename('huefy', f'../themes.d/{self.manifest_file}')
+        manifest_path = pkg_resources.resource_filename('huefy', f'themes.d/{self.manifest_file}')
         if not pkg_resources.resource_exists('huefy', theme_file):
             print(f"Theme file {theme_file} does not exist.")
             return False
@@ -92,7 +93,7 @@ class ThemeManager:
                 for line in manifest:
                     if line.strip():
                         manifest_theme_file, expected_hash = line.split()
-                        manifest_theme_file = pkg_resources.resource_filename('huefy', f'../themes.d/{manifest_theme_file}')
+                        manifest_theme_file = pkg_resources.resource_filename('huefy', f'themes.d/{manifest_theme_file}')
                         if theme_file == manifest_theme_file:
                             with pkg_resources.resource_stream('huefy', theme_file) as theme:
                                 actual_hash = hashlib.sha256(theme.read()).hexdigest()
@@ -132,7 +133,7 @@ class ThemeManager:
         Theme: Initialized Theme object with the loaded theme data.
         """
         if not theme_file:
-            theme_file = pkg_resources.resource_filename('huefy', f'../themes.d/{self.default_theme}')
+            theme_file = pkg_resources.resource_filename('huefy', f'themes.d/{self.default_theme}')
 
         theme = Theme.from_file(theme_file)
         if theme:
