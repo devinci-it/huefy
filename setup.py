@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='huefy',
-    version='1.2.1',
+    version='1.2.2',
     packages=find_packages(where='src'),  # Find packages under 'src'
     package_dir={'': 'src'},              # Package root directory is 'src'
     package_data={
