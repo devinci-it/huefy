@@ -1,8 +1,3 @@
- 
- Theme Manager for Scripts
-
-The Theme Manager script facilitates easy management and validation of themes for your scripts, particularly focusing on the `themes.d` directory configuration and usage of the `Theme` object.
-
 ## Configuration
 
 ### themes.d Directory
