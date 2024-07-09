@@ -1,0 +1,26 @@
+# MANIFEST.in for huefy 
+
+# Include all Python scripts and modules
+recursive-include src *.py
+
+# Include all theme files
+recursive-include themes.d *.theme
+
+# Include configuration files
+include hue.config
+
+# Include README file
+include README.md
+
+# Include scripts
+recursive-include scripts *.py
+
+# Include the main package file
+include __init__.py
+
+# Include the manifest file
+include MANIFEST
+
+# Exclude any compiled Python files
+global-exclude *.pyc
+global-exclude __pycache__

@@ -2,15 +2,15 @@ from setuptools import setup, find_packages
 
 setup(
     name='huefy',
-    version='1.0.0',
-    packages=find_packages(include=['.', 'src.*']),
-    package_dir={'': 'src'},
+    version='1.2.0',
+    packages=find_packages(where='src'),  # Find packages under 'src'
+    package_dir={'': 'src'},              # Package root directory is 'src'
     package_data={
         '': ['*.theme', '*.config', '*.py', '*.md'],  # Include all .theme, .config, .py, and .md files
     },
     entry_points={
         'console_scripts': [
-            'hue = hue:main',
+            'hue = huefy.hue:handle_arguments',  # Entry point to your main script
         ],
     },
     python_requires='>=3.6',
