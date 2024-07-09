@@ -1,0 +1,1 @@
+from hue import theme as default_theme

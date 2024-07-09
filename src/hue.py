@@ -1,7 +1,7 @@
 import argparse
 from huefy.theme_manager import ThemeManager
 
-def handle_arguments():
+def main():
     parser = argparse.ArgumentParser(description="Manage and validate themes for Hue application.")
     parser.add_argument('-l', '--load', action='store_true', help='Load the specified theme.')
     parser.add_argument('-v', '--validate', action='store_true', help='Validate the specified theme against its hash.')
@@ -12,7 +12,7 @@ if __name__ == "__main__":
     theme_manager = ThemeManager()
     theme_manager.setup_logging()
 
-    args = handle_arguments()
+    args = main()
 
     if args.theme:
         if args.validate:

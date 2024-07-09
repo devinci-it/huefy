@@ -4,16 +4,16 @@
 recursive-include src *.py
 
 # Include all theme files
-recursive-include themes.d *.theme
+recursive-include src/themes.d *.theme
 
 # Include configuration files
-include hue.config
+include src/hue.config
 
 # Include README file
 include README.md
 
 # Include scripts
-recursive-include scripts *.py
+recursive-include src/scripts *.py
 
 # Include the main package file
 include __init__.py
