@@ -184,7 +184,7 @@ if __name__ == "__main__":
     # Directory containing theme files
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
-    theme_directory = os.path.join(script_dir,"../themes.d/")
+    theme_directory = os.path.join(script_dir,"themes.d/")
 
     # List all .theme files in the directory
     theme_files = [f for f in os.listdir(theme_directory) if f.endswith('.theme')]
